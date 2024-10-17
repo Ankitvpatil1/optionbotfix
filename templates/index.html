@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Move Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Market Move Prediction</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="file">Upload Chart Screenshot:</label>
+            <input type="file" id="file" name="file" accept="image/*" required>
+            <button type="submit">Predict Market Move</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Handle form submission for file upload and prediction
+        const form = document.getElementById('uploadForm');
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('result').textContent = 'Prediction: ' + result.prediction;
+        });
+    </script>
+</body>
+</html>
