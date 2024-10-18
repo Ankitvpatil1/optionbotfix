@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import os
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 # Create an uploads directory if it doesn't exist
 UPLOAD_FOLDER = './uploads'
@@ -26,5 +26,5 @@ def upload_file():
     
     return jsonify({'prediction': prediction}), 200
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if _name_ == '_main_':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
