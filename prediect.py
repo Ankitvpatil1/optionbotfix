@@ -1,6 +1,6 @@
 # Install required libraries
-!pip install h2o tensorflow opencv-python-headless yfinance gym stable-baselines3
-!apt-get install -y python3-opencv
+# !pip install h2o tensorflow opencv-python-headless yfinance gym stable-baselines3
+# !apt-get install -y python3-opencv
 
 # Mount Google Drive
 from google.colab import drive
@@ -512,9 +512,9 @@ print(ma_signals)
 engulfing_patterns = detect_engulfing_pattern(prices)
 print("\nBullish/Bearish Engulfing Pattern Detection:")
 print(engulfing_patterns)
-!pip install deap
-# Step 0: Install DEAP if not already installed
-!pip install deap
+# !pip install deap
+# # Step 0: Install DEAP if not already installed
+# !pip install deap
 
 # Import necessary modules from DEAP and Python's standard library
 from deap import base, creator, tools, algorithms
